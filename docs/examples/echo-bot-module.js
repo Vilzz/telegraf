@@ -33,6 +33,6 @@ bot.help(async (ctx) => {
 })
 bot.action('delete', (ctx) => ctx.deleteMessage())
 bot.on('dice', (ctx) => ctx.reply(`Value: ${ctx.message.dice.value}`))
-bot.on('message', (ctx) => ctx.telegram.sendCopy(ctx.message.chat.id, ctx.message, keyboard))
+bot.on('message', (ctx) => ctx.copyMessage(ctx.message.chat.id, keyboard))
 
 module.exports = bot

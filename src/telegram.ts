@@ -1001,20 +1001,6 @@ export class Telegram extends ApiClient {
   }
 
   /**
-   * Send copy of existing message.
-   * @deprecated use `copyMessage` instead
-   * @param chatId Unique identifier for the target chat or username of the target channel (in the format @channelusername)
-   * @param message Received message object
-   */
-  sendCopy(
-    chatId: number | string,
-    message: tg.Message,
-    extra?: tt.ExtraCopyMessage
-  ): Promise<tg.MessageId> {
-    return this.copyMessage(chatId, message.chat.id, message.message_id, extra)
-  }
-
-  /**
    * Send copy of existing message
    * @param chatId Unique identifier for the target chat or username of the target channel (in the format @channelusername)
    * @param fromChatId Unique identifier for the chat where the original message was sent (or channel username in the format @channelusername)

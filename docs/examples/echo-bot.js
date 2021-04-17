@@ -12,7 +12,7 @@ const keyboard = Markup.inlineKeyboard([
 const bot = new Telegraf(process.env.BOT_TOKEN)
 bot.start((ctx) => ctx.reply('Hello'))
 bot.help((ctx) => ctx.reply('Help message'))
-bot.on('message', (ctx) => ctx.telegram.sendCopy(ctx.message.chat.id, ctx.message, keyboard))
+bot.on('message', (ctx) => ctx.copyMessage(ctx.message.chat.id, keyboard))
 bot.action('delete', (ctx) => ctx.deleteMessage())
 bot.launch()
 
